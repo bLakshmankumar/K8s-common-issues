@@ -1,0 +1,64 @@
+Kubernetes is a powerful container orchestration platform, but like any complex system, it can encounter various troubleshooting issues. Below are some common Kubernetes troubleshooting issues along with examples:
+
+Pod Scheduling Issues:
+----------------------
+Example: Pods stuck in the "Pending" state due to resource constraints or node affinity rules.
+Solution: Check resource requests/limits and node selector/affinity configurations.
+
+Pod CrashLoopBackOff:
+--------------------
+Example: Pods repeatedly crashing and restarting.
+Solution: Inspect pod logs using kubectl logs to identify the cause of the crashes.
+
+Networking Issues:
+------------------
+Example: Services unable to communicate with each other, or external access to services not working.
+Solution: Check network policies, service configurations, and verify DNS resolution within the cluster.
+
+Cluster Component Failure:
+--------------------------
+Example: etcd, kube-apiserver, kube-controller-manager, or kube-scheduler not functioning correctly.
+Solution: Examine cluster component logs and check for resource issues on the nodes.
+
+Node Unavailability:
+--------------------
+Example: Nodes becoming unresponsive or not joining the cluster.
+Solution: Check node status, resource usage, and network connectivity. Investigate underlying infrastructure issues.
+
+Crashed Kubernetes Nodes:
+-------------------------
+Example: Nodes going down unexpectedly.
+Solution: Check system logs on the node, investigate hardware/OS issues, and consider implementing node health monitoring.
+
+Persistent Volume (PV) and Persistent Volume Claim (PVC) Issues:
+----------------------------------------------------------------
+Example: PV/PVC not bound, storage-related problems.
+Solution: Verify storage configurations, reclaim policies, and check if the storage provider is functioning correctly.
+
+Image Pull Failures:
+--------------------
+Example: Pods failing to pull container images from the registry.
+Solution: Check image availability, credentials, and network connectivity to the container registry.
+
+RBAC (Role-Based Access Control) Problems:
+------------------------------------------
+Example: Users or services facing access issues within the cluster.
+Solution: Review RBAC configurations, roles, and bindings to ensure proper access controls.
+
+Ingress Controller Misconfigurations:
+-------------------------------------
+Example: Ingress not routing traffic as expected.
+Solution: Verify Ingress rules, backend service configurations, and ensure that the Ingress controller is running correctly.
+
+High Resource Usage:
+--------------------
+Example: Cluster experiencing high CPU/memory utilization.
+Solution: Identify resource-intensive pods/services and optimize resource requests/limits or scale resources appropriately.
+
+Evicted Pods:
+------------
+Example: Pods getting evicted due to resource constraints.
+Solution: Adjust resource requests/limits or consider vertical/horizontal scaling to prevent evictions.
+
+When troubleshooting Kubernetes issues, always check the cluster's event logs, use kubectl describe to get more details about specific resources, and gather relevant container and system logs to diagnose problems effectively.
+Monitoring tools and observability solutions can also be valuable in identifying and resolving issues promptly.
